@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious URL Detection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="static/css/style.css"> 
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto">
+                    <div class="logo">
+                        <img src="https://i.ibb.co.com/W6Y2n7f/logoo.png">
+                    </div>
+                </div>
+                    <nav class="nav-links">
+                        <a href="/">Home</a>
+                        <a href="/history">History</a>
+                        <a href="/account">Account</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="signlogo">
+        <div class="col-auto signin_button" id="signin_button">
+            <a href="/login">
+                <button class="Btn">
+                    <div class="sign">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                        </svg>
+                    </div>
+                    <div class="text">Sign In</div>
+                </button>
+            </a>
+        </div>
+        <div class="col-auto signout_button" id="signout_button" style="display: none;">
+            <a href="/logout">
+                <button class="Btn">
+                    <div class="sign">
+                        <svg viewBox="0 0 512 512">
+                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                        </svg>
+                    </div>
+                    <div class="text">Sign Out</div>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="section" id="section1">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Malicious URL Detection</h1>
+            {% if username %}
+            <h1>Welcome, {{ username }}</h1>
+            {% else %}
+            <h1>Welcome, Guest</h1>
+            <h4>Sign In to Save Your Searching History</h4>
+            {% endif %}
+
+            <form id="urlForm" class="form animate__animated animate__fadeInUp">
+                <div style="position: relative;">
+                    <input type="text" id="url" name="url" class="input" placeholder="Enter URL">
+                    <div class="input-border"></div>
+                </div>
+                <button type="submit" id="checkButton" class="btn btn-primary mt-3">Check</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="section" id="section2">
+        <div class="container">
+            <a id="result-anchor"></a>
+            <div id="result">
+                <h3>Detection Result:</h3>
+                <img id="maliciousphoto" src="https://cdn-icons-png.flaticon.com/256/272/272289.png">
+                <img id="safephoto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtrSRsMuE1czYUNYofyv-SK4vbnVEl2Of0Sg&s" alt="Safe Image">
+                <p id="result-text"></p>
+                <button class="buttons" onclick="window.location.href = '/';">Check Again</button>
+                <br>
+                <a href="#section3" class="buttons">More Info</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section" id="section3">
+        <div class="container">
+            <h2>More Information</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="https://i.ibb.co.com/BgVqZHg/infoo.png" alt="Description" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-box">
+                        <div class="carousel">
+                            <div class="carousel-content">
+                                <p>If you receive a result indicating that a URL is malicious, it means the URL exhibits unusual patterns, such as including ports, IP addresses, or being excessively long. These characteristics are often associated with phishing attempts and other types of cyber threats. It is essential to verify the legitimacy of such URLs before proceeding. Always be caution when visiting websites on the internet to protect your personal information and devices from potential harm.</p>
+                                <p>Currently, the website is still not working perfectly. This website uses supervised learning machine learning which uses labelled data to learn URLs categories. So the data may not be updated until now. Therefore, if you want more accurate results, you can visit trusted URLs detection websites such as <a href="https://www.virustotal.com/">VirusTotal</a>. <br> <br>Sincerly apologise for any inconvenience and thank you.</p>
+                            </div>
+                            <button class="prev" onclick="prevSlide()">&#10094;</button>
+                            <button class="next" onclick="nextSlide()">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="check-again-button">
+                <button class="butto" onclick="window.location.href = '/';">Check Again</button>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script>
+        let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('#section3 .carousel-content p');
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = index;
+    }
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(-${currentSlide * 100}%)`;
+    });
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+showSlide(currentSlide);
+
+        $(document).ready(function() {
+            const isAuthenticated = {{ username|tojson|safe }} !== null;
+
+            if (isAuthenticated) {
+                $('#signin_button').hide();
+                $('#signout_button').show();
+            } else {
+                $('#signin_button').show();
+                $('#signout_button').hide();
+            }
+        });
+    </script>
+</body>
+</html>

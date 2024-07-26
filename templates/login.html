@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="static/css/loginstyle.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="header">
+                <header><img src="images/logo.png" alt=""></header>
+                <p id="formTitle">Log In</p>
+            </div>
+            <form id="signInForm" class="sign-in-form active" action="logining" method="post">
+                <div class="input-box">
+                    <label for="username_or_email">Username or Email</label>
+                    <input type="text" class="input-field" id="username_or_email" name="username_or_email" required>
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <label for="pass">Password</label>
+                    <input type="password" class="input-field" id="pass" name="password" required>
+                    <i class="bx bx-lock"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="input-submit" value="SIGN IN">
+                </div>
+                <div class="bottom">
+                    <span><a href="#" id="signUpLink">Don't have an account? Sign Up</a></span>
+                </div>
+            </form>
+
+            <form id="signUpForm" class="sign-up-form" action="register" method="post">
+                <div class="input-box">
+                    <label for="newUsername">Username</label>
+                    <input type="text" class="input-field" id="newUsername" name="newUsername" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <label for="newEmail">E-Mail</label>
+                    <input type="email" class="input-field" id="newEmail" name="newEmail" required>
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <label for="newPass">Password</label>
+                    <input type="password" class="input-field" id="newPass" name="newPass" required>
+                    <i class="bx bx-lock"></i>
+                </div>
+                <div class="input-box">
+                    <label for="confirmPass">Confirm Password</label>
+                    <input type="password" class="input-field" id="confirmPass" name="confirmPass" required>
+                    <i class="bx bx-lock"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="input-submit" value="SIGN UP">
+                </div>
+                <div class="bottom">
+                    <span><a href="#" id="signInLink">Already have an account? Log In</a></span>
+                </div>
+            </form>
+        </div>
+        <div class="wrapper"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signUpLink = document.getElementById('signUpLink');
+            const signInLink = document.getElementById('signInLink');
+            const formTitle = document.getElementById('formTitle');
+            const signInForm = document.getElementById('signInForm');
+            const signUpForm = document.getElementById('signUpForm');
+            const container = document.querySelector('.container');
+
+            signUpLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                signUpForm.classList.add('active');
+                signInForm.classList.remove('active');
+                formTitle.textContent = 'Sign Up';
+                container.classList.add('sign-up-mode');
+            });
+
+            signInLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                signInForm.classList.add('active');
+                signUpForm.classList.remove('active');
+                formTitle.textContent = 'Log In';
+                container.classList.remove('sign-up-mode');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                    circle farthest-side at 0% 50%,
+                    #282828 23.5%,
+                    rgba(255, 170, 0, 0) 0
+                )
+                21px 30px,
+                radial-gradient(
+                    circle farthest-side at 0% 50%,
+                    #2c3539 24%,
+                    rgba(240, 166, 17, 0) 0
+                )
+                19px 30px,
+                linear-gradient(
+                    #282828 14%,
+                    rgba(240, 166, 17, 0) 0,
+                    rgba(240, 166, 17, 0) 85%,
+                    #282828 0
+                )
+                0 0,
+                linear-gradient(
+                    150deg,
+                    #282828 24%,
+                    #2c3539 0,
+                    #2c3539 26%,
+                    rgba(240, 166, 17, 0) 0,
+                    rgba(240, 166, 17, 0) 74%,
+                    #2c3539 0,
+                    #2c3539 76%,
+                    #282828 0
+                )
+                0 0,
+                linear-gradient(
+                    30deg,
+                    #282828 24%,
+                    #2c3539 0,
+                    #2c3539 26%,
+                    rgba(240, 166, 17, 0) 0,
+                    rgba(240, 166, 17, 0) 74%,
+                    #2c3539 0,
+                    #2c3539 76%,
+                    #282828 0
+                )
+                0 0,
+                linear-gradient(90deg, #2c3539 2%, #282828 0, #282828 98%, #2c3539 0%) 0 0
+                #282828;
+            background-size: 40px 60px;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #343a40;
+            padding: 0.5rem 0;
+            height: 70px; 
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 90%;
+        }
+
+        .header .logo {
+            position: absolute;
+            left: -170px;
+            bottom: -30px;
+            width: 60px; 
+            height: auto; 
+        }
+
+        .header .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .header .nav-links {
+            display: flex;
+        }
+
+        .header .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 90%;
+        }
+
+        .header .auth-button {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+        }
+
+        .table {
+            color: #fff;
+            background-color: #343a40;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            border: 1px solid #4e5d6c;
+            padding: 10px;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 300px;
+        }
+
+        .table thead th {
+            background-color: #454d55;
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #3b424a;
+        }
+
+        .table tbody tr:hover {
+            background-color: #484f57;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="col-auto">
+                    <div class="logo">
+                        <img src="https://i.ibb.co.com/W6Y2n7f/logoo.png">
+                    </div>
+                </div>
+                <nav class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/history">History</a>
+                    <a href="/account">Account</a>
+                    <a href="/logout">Logout</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-5">
+        <h2>Detection History</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">URL</th>
+                    <th scope="col">Detection Date</th>
+                    <th scope="col">Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for detection in detections %}
+                    <tr>
+                        <td>{{ detection.url }}</td>
+                        <td>{{ detection.detection_date }}</td>
+                        <td>{{ detection.detection_result }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
