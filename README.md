@@ -22,15 +22,33 @@ By leveraging the power of machine learning, we aim to:
 - **Model Training**: A **Random Forest Classifier** is trained to detect patterns indicative of malicious behavior.
 - **Classification**: Given a new URL, the model predicts whether it's *malicious* or *safe*.
 
+### 🗂️ Use Case Overview
+
+<img src="assets/usecase.png" alt="Use Case Diagram" width="600"/>
+
 ---
 
 ## 🔍 Results & Insights
 
-- **High Accuracy**: The Random Forest model performed well in correctly identifying a majority of malicious URLs.
-- **Challenges**: 
+- ✅ **High Accuracy**: The Random Forest model performed well in correctly identifying a majority of malicious URLs.
+- ⚠️ **Challenges**: 
   - **False Positives**: Some safe URLs are incorrectly flagged as threats.
   - **False Negatives**: Certain malicious URLs may go undetected.
-- **Room for Improvement**: While the model offers meaningful protection, reducing these misclassifications through further model tuning, feature engineering, or ensemble techniques remains a priority.
+- 📈 **Room for Improvement**: While the model offers meaningful protection, reducing these misclassifications through further model tuning, feature engineering, or ensemble techniques remains a priority.
+
+### 📊 Results Sample
+
+<img src="assets/Result.png" alt="Prediction Results" width="600"/>
+
+---
+
+## 🖥️ User Interface Preview
+
+### 🔧 Dashboard
+<img src="assets/Dashboard.png" alt="Dashboard Interface" width="600"/>
+
+### 📜 History Tracking
+<img src="assets/History.png" alt="History Page" width="600"/>
 
 ---
 
