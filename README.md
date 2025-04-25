@@ -30,11 +30,11 @@ By leveraging the power of machine learning, we aim to:
 
 ## 🔍 Results & Insights
 
-- ✅ **High Accuracy**: The Random Forest model performed well in correctly identifying a majority of malicious URLs.
-- ⚠️ **Challenges**: 
+- **High Accuracy**: The Random Forest model performed well in correctly identifying a majority of malicious URLs.
+- **Challenges**: 
   - **False Positives**: Some safe URLs are incorrectly flagged as threats.
   - **False Negatives**: Certain malicious URLs may go undetected.
-- 📈 **Room for Improvement**: While the model offers meaningful protection, reducing these misclassifications through further model tuning, feature engineering, or ensemble techniques remains a priority.
+- **Room for Improvement**: While the model offers meaningful protection, reducing these misclassifications through further model tuning, feature engineering, or ensemble techniques remains a priority.
 
 ### 📊 Results Sample
 
@@ -44,10 +44,10 @@ By leveraging the power of machine learning, we aim to:
 
 ## 🖥️ User Interface Preview
 
-### 🔧 Dashboard
+### Dashboard
 <img src="assets/Dashboard.png" alt="Dashboard Interface" width="600"/>
 
-### 📜 History Tracking
+### History Tracking
 <img src="assets/History.png" alt="History Page" width="600"/>
 
 ---
@@ -70,12 +70,6 @@ While rooted in technical rigor, this project creatively applies machine learnin
 - **Computer Science**: Machine learning, data preprocessing, algorithm optimization.
 - **Cybersecurity**: Threat modeling, phishing detection, real-time classification.
 - **Ethics & Society**: Advocating for safer online environments through responsible tech.
-
-### 🛠️ Work Ethic & Excellence
-Built with a focus on reliability and accuracy:
-- Clean, well-documented code
-- Rigorous testing and model evaluation
-- A commitment to continual refinement for improved detection
 
 ---
 
